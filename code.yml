@@ -4,6 +4,6 @@
     - name: HTTP OS Package Installation
       package: name=httpd state=present
     - name: NTP File Configurations
-      file: path=/var/www/http/index.html state=file
+      copy: src=./index.html dest=/var/www/html/index.html
     - name: To start HTTPD services
       service: name=httpd state=started enabled=yes
